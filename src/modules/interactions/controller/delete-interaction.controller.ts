@@ -10,7 +10,7 @@ import {
 import { DeleteInteractionService } from '../service';
 import { DeleteInteractionOutputDTO } from '../dto/io/delete-interaction-output.dto';
 
-@Controller()
+@Controller('api/interactions/delete')
 export class DeleteInteractionController {
   constructor(private readonly deleteInteractionService: DeleteInteractionService) { }
 

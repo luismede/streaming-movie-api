@@ -10,7 +10,7 @@ import {
 import { DeleteMovieService } from '../service';
 import { DeleteMovieOutputDTO } from '../dto/io/delete-movie-output.dto';
 
-@Controller()
+@Controller('api/movie/delete')
 export class DeleteMovieController {
   constructor(private readonly deleteMovieService: DeleteMovieService) { }
 

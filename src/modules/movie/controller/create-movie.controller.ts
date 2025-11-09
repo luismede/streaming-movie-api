@@ -3,9 +3,9 @@ import { CreateMovieService } from '../service/create-movie.service';
 import { CreateMovieInputDTO } from '../dto/io/create-movie-input.dto';
 import { CreateMovieOutputDTO } from '../dto/io/create-movie-output.dto';
 
-@Controller()
+@Controller('api/movie/delete')
 export class CreateMovieController {
-  constructor(private readonly createMovieService: CreateMovieService) {}
+  constructor(private readonly createMovieService: CreateMovieService) { }
 
   @HttpCode(HttpStatus.CREATED)
   @Post()

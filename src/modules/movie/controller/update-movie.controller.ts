@@ -10,9 +10,9 @@ import { UpdateMovieService } from '../service';
 import { UpdateMovieInputDTO } from '../dto/io/update-movie-input.dto';
 import { UpdateMovieOutputDTO } from '../dto/io/update-movie-output.dto';
 
-@Controller()
+@Controller('api/movie/update')
 export class UpdateMovieController {
-  constructor(private readonly updateMovieService: UpdateMovieService) {}
+  constructor(private readonly updateMovieService: UpdateMovieService) { }
 
   @HttpCode(HttpStatus.OK)
   @Put(':id')

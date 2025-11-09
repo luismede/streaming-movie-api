@@ -3,7 +3,7 @@ import { CreateInteractionService } from '../service/create-interaction.service'
 import { CreateInteractionInputDTO } from '../dto/io/create-interaction-input.dto';
 import { CreateInteractionOutputDTO } from '../dto/io/create-interaction-output.dto';
 
-@Controller('interactions')
+@Controller('api/interactions/create')
 export class CreateInteractionController {
   constructor(private readonly createInteractionService: CreateInteractionService) { }
 

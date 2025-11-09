@@ -2,9 +2,9 @@ import { Controller, HttpCode, HttpStatus, Get } from '@nestjs/common';
 import { FindAllMovieService } from '../service';
 import { FindAllMovieOutputDTO } from '../dto/io/findAll-movie.output.dto';
 
-@Controller()
+@Controller('api/movie')
 export class FindAllMovieController {
-  constructor(private readonly findAllMovieService: FindAllMovieService) {}
+  constructor(private readonly findAllMovieService: FindAllMovieService) { }
 
   @HttpCode(HttpStatus.OK)
   @Get()
