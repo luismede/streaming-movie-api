@@ -11,7 +11,7 @@ import { DeleteInteractionService } from '../service';
 import { DeleteInteractionOutputDTO } from '../dto/io/delete-interaction-output.dto';
 
 @Controller()
-export class DeleteMovieController {
+export class DeleteInteractionController {
   constructor(private readonly deleteInteractionService: DeleteInteractionService) { }
 
   @HttpCode(HttpStatus.OK)

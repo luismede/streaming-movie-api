@@ -1,19 +1,21 @@
-import { FindByUserInteractionController } from "./controller";
+import { DeleteInteractionController, FindByUserInteractionController } from "./controller";
 import { CreateInteractionController } from "./controller/create-interaction.controller";
 import { FindAllInteractionController } from "./controller/findAll-interaction.controller";
-import { CreateInteractionService, FindAllInteractionService, FindByUserInteractionService } from "./service";
+import { CreateInteractionService, DeleteInteractionService, FindAllInteractionService, FindByUserInteractionService } from "./service";
 import { Module } from "@nestjs/common";
 
 @Module({
   controllers: [
     CreateInteractionController,
     FindAllInteractionController,
-    FindByUserInteractionController
+    FindByUserInteractionController,
+    DeleteInteractionController
   ],
   providers: [
     CreateInteractionService,
     FindAllInteractionService,
-    FindByUserInteractionService
+    FindByUserInteractionService,
+    DeleteInteractionService
   ],
 })
 export class InteractionModule { }
