@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "filme" ALTER COLUMN "descricao" DROP NOT NULL,
+ALTER COLUMN "imagem" DROP NOT NULL,
+ALTER COLUMN "link" DROP NOT NULL;
