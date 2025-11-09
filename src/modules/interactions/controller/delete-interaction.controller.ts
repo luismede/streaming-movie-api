@@ -7,20 +7,20 @@ import {
   Param,
   ParseIntPipe,
 } from '@nestjs/common';
-import { DeleteMovieService } from '../service';
-import { DeleteMovieOutputDTO } from '../dto/io/delete-movie-output.dto';
+import { DeleteInteractionService } from '../service';
+import { DeleteInteractionOutputDTO } from '../dto/io/delete-interaction-output.dto';
 
 @Controller()
 export class DeleteMovieController {
-  constructor(private readonly deleteMovieService: DeleteMovieService) { }
+  constructor(private readonly deleteInteractionService: DeleteInteractionService) { }
 
   @HttpCode(HttpStatus.OK)
   @Delete(':id')
   public async handle(
     @Param('id', ParseIntPipe) id: number,
-  ): Promise<DeleteMovieOutputDTO> {
+  ): Promise<DeleteInteractionOutputDTO> {
     if (!id)
       throw new BadRequestException('Você deve informar o id para deletar');
-    return await this.deleteMovieService.execute({ id });
+    return await this.deleteInteractionService.execute({ id });
   }
 }
