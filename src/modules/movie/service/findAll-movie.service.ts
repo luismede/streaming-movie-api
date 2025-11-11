@@ -4,10 +4,11 @@ import { FindAllMovieOutputDTO } from '../dto/io/findAll-movie.output.dto';
 
 @Injectable()
 export class FindAllMovieService {
-  constructor(private readonly prismaService: PrismaService) {}
+  constructor(private readonly prismaService: PrismaService) { }
   public async execute(): Promise<FindAllMovieOutputDTO> {
     const movies = await this.prismaService.filme.findMany({
       select: {
+        id: true,
         nome: true,
         descricao: true,
         ano: true,
@@ -18,6 +19,7 @@ export class FindAllMovieService {
 
     return {
       data: movies.map((movie) => ({
+        id: movie.id,
         nome: movie.nome,
         descricao: movie.descricao || null,
         ano: movie.ano,
