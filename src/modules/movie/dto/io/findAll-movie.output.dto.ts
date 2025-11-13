@@ -6,5 +6,6 @@ export class FindAllMovieOutputDTO {
     ano: number;
     imagem?: string | null;
     link?: string | null;
+    categoria: string | null;
   }>;
 }

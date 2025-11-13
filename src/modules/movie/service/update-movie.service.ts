@@ -5,7 +5,7 @@ import { UpdateMovieOutputDTO } from '../dto/io/update-movie-output.dto';
 
 @Injectable()
 export class UpdateMovieService {
-  constructor(private readonly prismaService: PrismaService) {}
+  constructor(private readonly prismaService: PrismaService) { }
 
   public async execute({
     ...data
@@ -30,6 +30,7 @@ export class UpdateMovieService {
         ano: data.ano,
         imagem: data.imagem,
         link: data.link,
+        categoria: data.categoria,
       },
       where: {
         id: id,
@@ -41,6 +42,7 @@ export class UpdateMovieService {
         ano: true,
         imagem: true,
         link: true,
+        categoria: true,
       },
     });
   }

@@ -4,4 +4,5 @@ export class CreateMovieOutputDTO {
   ano: number;
   imagem?: string | null;
   link?: string | null;
+  categoria: string;
 }

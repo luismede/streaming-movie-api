@@ -21,6 +21,7 @@ model Filme {
   ano        Int
   imagem     String?
   link       String?
+  categoria  String
   Favoritado Interecao[]
 
   @@map("filme")

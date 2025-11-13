@@ -14,6 +14,7 @@ export class FindAllMovieService {
         ano: true,
         imagem: true,
         link: true,
+        categoria: true,
       },
     });
 
@@ -25,6 +26,7 @@ export class FindAllMovieService {
         ano: movie.ano,
         imagem: movie.imagem || null,
         link: movie.link || null,
+        categoria: movie.categoria || null,
       })),
     };
   }

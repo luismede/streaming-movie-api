@@ -4,7 +4,7 @@ import { CreateMovieInputDTO } from '../dto/io/create-movie-input.dto';
 
 @Injectable()
 export class CreateMovieService {
-  constructor(private readonly prismaService: PrismaService) {}
+  constructor(private readonly prismaService: PrismaService) { }
 
   public async execute({
     ...data
@@ -16,6 +16,7 @@ export class CreateMovieService {
         ano: data.ano,
         imagem: data.imagem,
         link: data.link,
+        categoria: data.categoria
       },
       select: {
         nome: true,
@@ -23,6 +24,7 @@ export class CreateMovieService {
         ano: true,
         imagem: true,
         link: true,
+        categoria: true,
       },
     });
 
