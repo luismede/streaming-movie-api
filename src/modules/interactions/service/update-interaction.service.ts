@@ -8,12 +8,14 @@ export class UpdateInteractionService {
   constructor(private readonly prismaService: PrismaService) {}
 
   public async execute({
-    ...data
+    id,
+    tipo,
+    nota,
+    data,
   }: UpdateInteractionInputDTO): Promise<UpdateInteractionOutputDTO> {
-    const id = Number(data.id);
     const interactionExists = await this.prismaService.interecao.findFirst({
       where: {
-        id: id,
+        id,
       },
       select: {
         id: true,
@@ -25,13 +27,12 @@ export class UpdateInteractionService {
 
     return await this.prismaService.interecao.update({
       data: {
-        id: id,
-        tipo: data.tipo || null || undefined,
-        nota: data.nota || null || undefined,
-        data: data.data || null || undefined,
+        tipo: tipo ?? undefined,
+        nota: nota ?? undefined,
+        data: data ?? undefined,
       },
       where: {
-        id: id,
+        id,
       },
       select: {
         id: true,
