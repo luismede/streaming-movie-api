@@ -7,7 +7,7 @@ export class FindByUserInteractionController {
   constructor(private readonly findByUserInteractionService: FindByUserInteractionService) { }
 
   @HttpCode(HttpStatus.OK)
-  @Get(':id')
+  @Get('/:idUsuario')
   public async handle(@Param('idUsuario', ParseIntPipe) idUsuario: number): Promise<FindByUserInteractionOutputDTO> {
     return await this.findByUserInteractionService.execute({ idUsuario });
   }
