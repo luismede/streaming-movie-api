@@ -2,9 +2,8 @@ import { IsOptional, MaxLength, Min, IsDate, IsNumber } from 'class-validator';
 
 export class CreateInteractionInputDTO {
   @MaxLength(50, {
-    message: 'O tipo da interação deve ter no máximo 50 caracteres'
-  }
-  )
+    message: 'O tipo da interação deve ter no máximo 50 caracteres',
+  })
   tipo: string;
 
   @Min(1, {

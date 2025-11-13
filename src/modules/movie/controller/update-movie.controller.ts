@@ -4,6 +4,7 @@ import {
   HttpCode,
   HttpStatus,
   Param,
+  ParseIntPipe,
   Put,
 } from '@nestjs/common';
 import { UpdateMovieService } from '../service';
@@ -12,12 +13,12 @@ import { UpdateMovieOutputDTO } from '../dto/io/update-movie-output.dto';
 
 @Controller('api/movie/update')
 export class UpdateMovieController {
-  constructor(private readonly updateMovieService: UpdateMovieService) { }
+  constructor(private readonly updateMovieService: UpdateMovieService) {}
 
   @HttpCode(HttpStatus.OK)
-  @Put(':id')
+  @Put('/:id')
   public async handle(
-    @Param() { id },
+    @Param('id', ParseIntPipe) id: number,
     @Body() data: UpdateMovieInputDTO,
   ): Promise<UpdateMovieOutputDTO> {
     return this.updateMovieService.execute({ ...data, id });

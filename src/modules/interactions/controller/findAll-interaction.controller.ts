@@ -4,7 +4,9 @@ import { FindAllInteractionOutputDTO } from '../dto/io/findAll-interaction.outpu
 
 @Controller('api/interactions')
 export class FindAllInteractionController {
-  constructor(private readonly findAllInteractionService: FindAllInteractionService) { }
+  constructor(
+    private readonly findAllInteractionService: FindAllInteractionService,
+  ) {}
 
   @HttpCode(HttpStatus.OK)
   @Get()

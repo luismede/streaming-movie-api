@@ -1,4 +1,4 @@
-import { IsOptional, Max, Min, MinLength, MaxLength } from 'class-validator';
+import { IsOptional, Max, MinLength, MaxLength } from 'class-validator';
 
 export class UpdateMovieInputDTO {
   id: number;
@@ -24,8 +24,7 @@ export class UpdateMovieInputDTO {
   link?: string;
 
   @MaxLength(255, {
-    message: 'O número máximo de caracteres permitido é 255'
+    message: 'O número máximo de caracteres permitido é 255',
   })
   categoria: string;
-
 }

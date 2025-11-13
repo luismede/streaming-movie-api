@@ -19,7 +19,7 @@ export class CreateMovieInputDTO {
   link?: string | null;
 
   @MaxLength(255, {
-    message: 'O número máximo de caracteres permitido é 255'
+    message: 'O número máximo de caracteres permitido é 255',
   })
   categoria: string;
 }

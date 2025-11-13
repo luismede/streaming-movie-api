@@ -5,7 +5,7 @@ import { DeleteInteractionOutputDTO } from '../dto/io/delete-interaction-output.
 
 @Injectable()
 export class DeleteInteractionService {
-  constructor(private readonly prismaService: PrismaService) { }
+  constructor(private readonly prismaService: PrismaService) {}
   public async execute({
     id,
   }: DeleteInteractionInputDTO): Promise<DeleteInteractionOutputDTO> {
@@ -15,7 +15,8 @@ export class DeleteInteractionService {
       },
     });
 
-    if (!interactionExists) throw new NotFoundException('Interação não encontrada');
+    if (!interactionExists)
+      throw new NotFoundException('Interação não encontrada');
 
     const result = await this.prismaService.interecao.delete({
       where: {

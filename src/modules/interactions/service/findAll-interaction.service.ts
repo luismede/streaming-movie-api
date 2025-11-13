@@ -4,10 +4,11 @@ import { FindAllInteractionOutputDTO } from '../dto/io/findAll-interaction.outpu
 
 @Injectable()
 export class FindAllInteractionService {
-  constructor(private readonly prismaService: PrismaService) { }
+  constructor(private readonly prismaService: PrismaService) {}
   public async execute(): Promise<FindAllInteractionOutputDTO> {
     const interactions = await this.prismaService.interecao.findMany({
       select: {
+        id: true,
         tipo: true,
         nota: true,
         data: true,
@@ -18,6 +19,7 @@ export class FindAllInteractionService {
 
     return {
       data: interactions.map((interaction) => ({
+        id: interaction.id,
         tipo: interaction.tipo,
         data: interaction.data || null,
         nota: interaction.nota || null,

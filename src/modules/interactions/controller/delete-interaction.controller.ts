@@ -12,10 +12,12 @@ import { DeleteInteractionOutputDTO } from '../dto/io/delete-interaction-output.
 
 @Controller('api/interactions/delete')
 export class DeleteInteractionController {
-  constructor(private readonly deleteInteractionService: DeleteInteractionService) { }
+  constructor(
+    private readonly deleteInteractionService: DeleteInteractionService,
+  ) {}
 
   @HttpCode(HttpStatus.OK)
-  @Delete(':id')
+  @Delete('/:id')
   public async handle(
     @Param('id', ParseIntPipe) id: number,
   ): Promise<DeleteInteractionOutputDTO> {

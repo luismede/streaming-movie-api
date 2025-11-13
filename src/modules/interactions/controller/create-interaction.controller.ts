@@ -5,10 +5,14 @@ import { CreateInteractionOutputDTO } from '../dto/io/create-interaction-output.
 
 @Controller('api/interactions/create')
 export class CreateInteractionController {
-  constructor(private readonly createInteractionService: CreateInteractionService) { }
+  constructor(
+    private readonly createInteractionService: CreateInteractionService,
+  ) {}
 
   @Post()
-  async createInteraction(@Body() createInteractionInputDTO: CreateInteractionInputDTO): Promise<CreateInteractionOutputDTO> {
+  async createInteraction(
+    @Body() createInteractionInputDTO: CreateInteractionInputDTO,
+  ): Promise<CreateInteractionOutputDTO> {
     return this.createInteractionService.execute(createInteractionInputDTO);
   }
 }
